@@ -16,24 +16,31 @@ class _homeUIState extends State<homeUI> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xff313131),
+      decoration: const BoxDecoration(
+        color: Color(0xff313131),
+        image: DecorationImage(
+          image: AssetImage("assets/images/homeBg.png"),
+          fit: BoxFit.cover,
+        ),
+      ),
       padding: const EdgeInsets.only(left: 100, right: 100),
       child: Column(
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.1,
             child: Row(
-              children: const [
-                Text(
+              children: [
+                const Text(
                   "Portfolio",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 30
                   ),
                 ),
-                Icon(
-                  Icons.logo_dev,
-                  size: 40,
+                const SizedBox(width: 15,),
+                Image.asset(
+                  "assets/images/portfolioLogo.png",
+                  scale: 6.5,
                 )
               ],
             ),
@@ -50,7 +57,7 @@ class _homeUIState extends State<homeUI> {
                       height: 220,
                       width: 220,
                       child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(200)),
+                        borderRadius: const BorderRadius.all(Radius.circular(200)),
                         child: Image.asset(
                           "assets/images/myPic.jpg"
                         ),
@@ -106,10 +113,36 @@ class _homeUIState extends State<homeUI> {
                     ),
                     Container(
                       width: 400,
-                      height: 68,
-                      decoration: BoxDecoration(
+                      height: 60,
+                      padding: const EdgeInsets.all(10),
+                      decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                         color: Colors.white,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          InkWell(
+                            onTap: (){},
+                            child: Image.asset("assets/images/githubLogo.png"),
+                          ),
+                          InkWell(
+                            onTap: (){},
+                            child: Image.asset("assets/images/linkedLogo.png"),
+                          ),
+                          InkWell(
+                            onTap: (){},
+                            child: Image.asset("assets/images/upworkLogo.png"),
+                          ),
+                          InkWell(
+                            onTap: (){},
+                            child: Image.asset("assets/images/fiverLogo.png"),
+                          ),
+                          InkWell(
+                            onTap: (){},
+                            child: Image.asset("assets/images/fbLogo.png"),
+                          )
+                        ],
                       ),
                     )
                   ],
