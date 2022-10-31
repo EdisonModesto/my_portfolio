@@ -1,6 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/UI/home/animatedTextList.dart';
+import 'package:portfolio/UI/animatedTextList.dart';
 
 class homeUI extends StatefulWidget {
   const homeUI({Key? key}) : super(key: key);

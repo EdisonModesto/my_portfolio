@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/UI/about/aboutDesktop.dart';
 import 'package:portfolio/UI/home/homeDesktop.dart';
+import 'package:portfolio/UI/skills/skillsDesktop.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,7 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
               controller: pageController,
               children: [
                 homeUI(),
-                aboutDesktop()
+                aboutDesktop(),
+                skillsDesktop()
               ],
             ),
             Align(
@@ -97,7 +99,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     InkWell(
-                      onTap: (){},
+                      onTap: (){
+                        pageController.animateToPage(2, duration: const Duration(milliseconds: 500), curve: Curves.easeInOutSine);
+                      },
                       onHover: (value){
                         if(value){
                           setState(() {
