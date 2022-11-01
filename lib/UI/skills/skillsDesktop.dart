@@ -16,9 +16,6 @@ class _skillsDesktopState extends State<skillsDesktop> {
   @override
   void initState() {
     super.initState();
-    setState(() {
-
-    });
   }
 
   @override

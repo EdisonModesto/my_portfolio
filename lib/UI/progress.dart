@@ -21,7 +21,7 @@ class _progressBarState extends State<progressBar> {
     super.didUpdateWidget(oldWidget);
     _value = widget.value;
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -32,9 +32,9 @@ class _progressBarState extends State<progressBar> {
         return Container(
           height: 10,
           width: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
-            borderRadius: const BorderRadius.all(Radius.circular(50.0)),
+            borderRadius: BorderRadius.all(Radius.circular(50.0)),
           ),
           child: Row(
             children: [

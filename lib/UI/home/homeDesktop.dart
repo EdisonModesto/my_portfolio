@@ -1,6 +1,9 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/UI/animatedTextList.dart';
+import 'package:portfolio/providers/UI%20Providers.dart';
+import 'package:provider/provider.dart';
 
 class homeUI extends StatefulWidget {
   const homeUI({Key? key}) : super(key: key);
@@ -11,7 +14,7 @@ class homeUI extends StatefulWidget {
 
 class _homeUIState extends State<homeUI> {
 
-
+  var sizeGroup = AutoSizeGroup();
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,7 @@ class _homeUIState extends State<homeUI> {
           fit: BoxFit.cover,
         ),
       ),
-      padding: const EdgeInsets.only(left: 100, right: 100),
+      padding: EdgeInsets.only(left: context.read<UIProviders>().screenPadding, right: context.read<UIProviders>().screenPadding),
       child: Column(
         children: [
           SizedBox(
@@ -47,6 +50,7 @@ class _homeUIState extends State<homeUI> {
           ),
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.9,
+            width: MediaQuery.of(context).size.width * 0.5,
             child: Center(
               child: SizedBox(
                 height: 475,
@@ -54,8 +58,7 @@ class _homeUIState extends State<homeUI> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
-                      height: 220,
-                      width: 220,
+                      width: context.read<UIProviders>().homePhoto,
                       child: ClipRRect(
                         borderRadius: const BorderRadius.all(Radius.circular(200)),
                         child: Image.asset(
@@ -64,43 +67,76 @@ class _homeUIState extends State<homeUI> {
                       ),
                     ),
                     SizedBox(
+                      width: MediaQuery.of(context).size.width,
                       child: Column(
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
-                              Text(
-                                "Hi! I'm ",
-                                style: TextStyle(
-                                    fontSize: 48,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold
-                                ),
+                          Text.rich(
+                            TextSpan(
+                              text: "Hi! I'm ",
+                              style:  TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize:  context.read<UIProviders>().HomeTitle
                               ),
-                              Text(
-                                "Edison Modesto",
-                                style: TextStyle(
-                                    fontSize: 48,
-                                    color: Color(0xff2EBBCE),
-                                    fontWeight: FontWeight.bold
+                              children: <TextSpan>[
+                                TextSpan(
+                                  text: 'Edison Modesto',
+                                  style: TextStyle(
+                                      color: Color(0xff2EBBCE),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: context.read<UIProviders>().HomeTitle
+                                  ),
                                 ),
-                              )
-                            ],
+                              ],
+                            ),
+                            maxLines: 1,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              const Text(
+                              Text(
                                 "I'm a ",
                                 style: TextStyle(
-                                    fontSize: 32.0,
+                                    fontSize:  context.read<UIProviders>().screenTitles,
                                     color: Colors.white
                                 ),
                               ),
                               AnimatedTextKit(
-                                animatedTexts: animatedTextList().homeList,
+                                animatedTexts: [
+                                  TyperAnimatedText(
+                                    'Flutter Developer',
+                                    textStyle: TextStyle(
+                                        fontSize: context.read<UIProviders>().screenTitles,
+                                        color: Color(0xff2EBBCE)
+                                    ),
+                                    speed: const Duration(milliseconds: 100),
+                                  ),
+                                  TyperAnimatedText(
+                                    'Mobile Developer',
+                                    textStyle: TextStyle(
+                                        fontSize: context.read<UIProviders>().screenTitles,
+                                        color: Color(0xff2EBBCE)
+                                    ),
+                                    speed: const Duration(milliseconds: 100),
+                                  ),
+                                  TyperAnimatedText(
+                                    'Freelancer',
+                                    textStyle: TextStyle(
+                                        fontSize: context.read<UIProviders>().screenTitles,
+                                        color: Color(0xff2EBBCE)
+                                    ),
+                                    speed: const Duration(milliseconds: 100),
+                                  ),
+                                  TyperAnimatedText(
+                                    'UI Designer',
+                                    textStyle: TextStyle(
+                                        fontSize: context.read<UIProviders>().screenTitles,
+                                        color: Color(0xff2EBBCE)
+                                    ),
+                                    speed: const Duration(milliseconds: 100),
+                                  ),
+                                ],
                                 totalRepeatCount: 200,
                                 pause: const Duration(milliseconds: 1000),
                                 displayFullTextOnTap: true,
