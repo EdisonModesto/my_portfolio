@@ -50,12 +50,12 @@ class _homeUIState extends State<homeUI> {
           ),
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.9,
-            width: MediaQuery.of(context).size.width * 0.5,
+            width: MediaQuery.of(context).size.width,
             child: Center(
               child: SizedBox(
                 height: 475,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
                       width: context.read<UIProviders>().homePhoto,
@@ -65,6 +65,9 @@ class _homeUIState extends State<homeUI> {
                           "assets/images/myPic.jpg"
                         ),
                       ),
+                    ),
+                    SizedBox(
+                      height: 40,
                     ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width,
@@ -147,9 +150,12 @@ class _homeUIState extends State<homeUI> {
                         ],
                       ),
                     ),
+                    SizedBox(
+                      height: 40,
+                    ),
                     Container(
-                      width: 400,
-                      height: 60,
+                      width: context.read<UIProviders>().socialConWidth,
+                      height: context.read<UIProviders>().socialConHeight,
                       padding: const EdgeInsets.all(10),
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(12)),

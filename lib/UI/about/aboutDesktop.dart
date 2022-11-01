@@ -1,5 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/providers/UI%20Providers.dart';
+import 'package:provider/provider.dart';
 
 import '../animatedTextList.dart';
 
@@ -21,7 +23,7 @@ class _aboutDesktopState extends State<aboutDesktop> {
           fit: BoxFit.cover,
         ),
       ),
-      padding: const EdgeInsets.all(100),
+      padding: EdgeInsets.all(context.read<UIProviders>().screenPadding),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,10 +40,10 @@ class _aboutDesktopState extends State<aboutDesktop> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   "About Me",
                   style: TextStyle(
-                    fontSize: 32.0,
+                    fontSize: context.read<UIProviders>().screenTitles,
                     color: Colors.white,
                     fontWeight: FontWeight.bold
                   ),
@@ -50,7 +52,16 @@ class _aboutDesktopState extends State<aboutDesktop> {
                 SizedBox(
                   width: 800,
                   child: AnimatedTextKit(
-                    animatedTexts: animatedTextList().aboutList,
+                    animatedTexts: [
+                      TypewriterAnimatedText(
+                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s",
+                        textStyle: TextStyle(
+                            fontSize: context.read<UIProviders>().subtext,
+                            color: Colors.white
+                        ),
+                        speed: const Duration(milliseconds: 8),
+                      ),
+                    ],
                     totalRepeatCount: 1,
                     pause: const Duration(milliseconds: 1000),
                     displayFullTextOnTap: true,
@@ -65,18 +76,18 @@ class _aboutDesktopState extends State<aboutDesktop> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   "Interests",
                   style: TextStyle(
-                      fontSize: 32.0,
+                      fontSize: context.read<UIProviders>().screenTitles,
                       color: Colors.white,
                       fontWeight: FontWeight.bold
                   ),
                 ),
                 SizedBox(height: 20),
                 Container(
-                  width: 400,
-                  height: 60,
+                  width: context.read<UIProviders>().socialConWidth,
+                  height: context.read<UIProviders>().socialConHeight,
                   padding: const EdgeInsets.all(10),
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(12)),
