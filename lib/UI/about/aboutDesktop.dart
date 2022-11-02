@@ -23,7 +23,7 @@ class _aboutDesktopState extends State<aboutDesktop> {
           fit: BoxFit.cover,
         ),
       ),
-      padding: EdgeInsets.all(context.read<UIProviders>().screenPadding),
+      padding: EdgeInsets.all(context.watch<UIProviders>().screenPadding),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,7 +43,7 @@ class _aboutDesktopState extends State<aboutDesktop> {
                 Text(
                   "About Me",
                   style: TextStyle(
-                    fontSize: context.read<UIProviders>().screenTitles,
+                    fontSize: context.watch<UIProviders>().screenTitles,
                     color: Colors.white,
                     fontWeight: FontWeight.bold
                   ),
@@ -56,7 +56,7 @@ class _aboutDesktopState extends State<aboutDesktop> {
                       TypewriterAnimatedText(
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s",
                         textStyle: TextStyle(
-                            fontSize: context.read<UIProviders>().subtext,
+                            fontSize: context.watch<UIProviders>().subtext,
                             color: Colors.white
                         ),
                         speed: const Duration(milliseconds: 8),
@@ -79,15 +79,15 @@ class _aboutDesktopState extends State<aboutDesktop> {
                 Text(
                   "Interests",
                   style: TextStyle(
-                      fontSize: context.read<UIProviders>().screenTitles,
+                      fontSize: context.watch<UIProviders>().screenTitles,
                       color: Colors.white,
                       fontWeight: FontWeight.bold
                   ),
                 ),
                 SizedBox(height: 20),
                 Container(
-                  width: context.read<UIProviders>().socialConWidth,
-                  height: context.read<UIProviders>().socialConHeight,
+                  width: context.watch<UIProviders>().socialConWidth,
+                  height: context.watch<UIProviders>().socialConHeight,
                   padding: const EdgeInsets.all(10),
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(12)),

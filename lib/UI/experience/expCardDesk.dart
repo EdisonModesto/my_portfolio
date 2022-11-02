@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/providers/UI%20Providers.dart';
+import 'package:provider/provider.dart';
 
 class expCardDesk extends StatelessWidget {
   const expCardDesk({this.logo, this.title, this.description, Key? key}) : super(key: key);
@@ -10,15 +12,15 @@ class expCardDesk extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 0,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(15))
       ),
       child: SizedBox(
-        width: 281,
-        height: 361,
+        width: context.watch<UIProviders>().expCardWidth,
+        height: context.watch<UIProviders>().expCardheight,
         child: Column(
           children: [
-            Expanded(
+            const Expanded(
               flex: 55,
               child: Center(
                 child: Icon(Icons.image),
@@ -28,8 +30,8 @@ class expCardDesk extends StatelessWidget {
               flex: 45,
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
+                decoration: const BoxDecoration(
                     color: Color(0xff313131),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(15),
@@ -42,7 +44,7 @@ class expCardDesk extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                           color: Colors.white
@@ -50,7 +52,7 @@ class expCardDesk extends StatelessWidget {
                     ),
                     Text(
                       description,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 14,
                           color: Color(0xffb0b0b0)
                       ),

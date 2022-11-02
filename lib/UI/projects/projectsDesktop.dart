@@ -2,6 +2,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/UI/projects/projCardDesk.dart';
 import 'package:portfolio/UI/projects/projectClass.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/UI Providers.dart';
 
 class projectsDesktop extends StatefulWidget {
   const projectsDesktop({Key? key}) : super(key: key);
@@ -25,15 +28,15 @@ class _projectsDesktopState extends State<projectsDesktop> {
           fit: BoxFit.cover,
         ),
       ),
-      padding: const EdgeInsets.all(100),
+      padding: EdgeInsets.all(context.watch<UIProviders>().screenPadding),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             "My Projects",
             style: TextStyle(
-                fontSize: 32.0,
+                fontSize: context.watch<UIProviders>().screenTitles,
                 color: Colors.white,
                 fontWeight: FontWeight.bold
             ),
@@ -41,23 +44,24 @@ class _projectsDesktopState extends State<projectsDesktop> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 "Personal Projects",
                 style: TextStyle(
-                  fontSize: 28.0,
+                  fontSize: context.watch<UIProviders>().screenTitles,
                   color: Color(0xff2EBBCE),
                 ),
               ),
               const SizedBox(height: 10),
               SizedBox(
                 width: 700,
-                height: 200,
+                height: context.watch<UIProviders>().projCardSize,
                 child: ScrollConfiguration(
                   behavior: ScrollConfiguration.of(context).copyWith(dragDevices: {
                     PointerDeviceKind.mouse,
                     PointerDeviceKind.trackpad,
                     PointerDeviceKind.stylus,
-                    PointerDeviceKind.unknown
+                    PointerDeviceKind.unknown,
+                    PointerDeviceKind.touch
                   },
                   scrollbars: true
                   ),
@@ -80,23 +84,24 @@ class _projectsDesktopState extends State<projectsDesktop> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 "Client Projects",
                 style: TextStyle(
-                  fontSize: 28.0,
+                  fontSize: context.watch<UIProviders>().screenTitles,
                   color: Color(0xff2EBBCE),
                 ),
               ),
               const SizedBox(height: 10),
               SizedBox(
                   width: 700,
-                  height: 200,
+                  height: context.watch<UIProviders>().projCardSize,
                   child: ScrollConfiguration(
                     behavior: ScrollConfiguration.of(context).copyWith(dragDevices: {
                       PointerDeviceKind.mouse,
                       PointerDeviceKind.trackpad,
                       PointerDeviceKind.stylus,
-                      PointerDeviceKind.unknown
+                      PointerDeviceKind.unknown,
+                      PointerDeviceKind.touch
                     },
                         scrollbars: true
                     ),

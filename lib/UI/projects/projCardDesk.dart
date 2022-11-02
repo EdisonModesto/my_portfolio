@@ -1,4 +1,7 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/providers/UI%20Providers.dart';
+import 'package:provider/provider.dart';
 
 class projCardDesk extends StatelessWidget {
   const projCardDesk({this.logo, this.title, this.description, Key? key}) : super(key: key);
@@ -13,8 +16,8 @@ class projCardDesk extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(15))
       ),
       child: SizedBox(
-        width: 200,
-        height: 200,
+        width: context.watch<UIProviders>().projCardSize,
+        height: context.watch<UIProviders>().projCardSize,
         child: Column(
           children: [
             Expanded(
@@ -39,18 +42,22 @@ class projCardDesk extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    AutoSizeText(
                       title,
+                      maxLines: 1,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: context.watch<UIProviders>().projTitle,
                         color: Colors.white
                       ),
+                      minFontSize: 1,
                     ),
-                    Text(
+                    AutoSizeText(
                       description,
+                      maxLines: 2,
+                      minFontSize: 1,
                       style: TextStyle(
-                          fontSize: 12,
+                          fontSize: context.watch<UIProviders>().projSub,
                           color: Color(0xffb0b0b0)
                       ),
                     )

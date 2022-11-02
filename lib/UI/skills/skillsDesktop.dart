@@ -1,6 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../providers/UI Providers.dart';
 import '../animatedTextList.dart';
 import '../progress.dart';
 
@@ -28,15 +30,15 @@ class _skillsDesktopState extends State<skillsDesktop> {
           fit: BoxFit.cover,
         ),
       ),
-      padding: const EdgeInsets.all(100),
+      padding: EdgeInsets.all(context.watch<UIProviders>().screenPadding),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             "My Skills",
             style: TextStyle(
-                fontSize: 32.0,
+                fontSize: context.watch<UIProviders>().screenTitles,
                 color: Colors.white,
                 fontWeight: FontWeight.bold
             ),
@@ -44,16 +46,16 @@ class _skillsDesktopState extends State<skillsDesktop> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 "Major Skills",
                 style: TextStyle(
-                    fontSize: 28.0,
+                    fontSize: context.watch<UIProviders>().screenTitles,
                     color: Color(0xff2EBBCE),
                 ),
               ),
               const SizedBox(height: 10),
               SizedBox(
-                width: 600,
+                width: context.watch<UIProviders>().skillContainer,
                 child: Column(
                   children: [
                     Row(
@@ -63,20 +65,20 @@ class _skillsDesktopState extends State<skillsDesktop> {
                           children: [
                             Image.asset(
                               "assets/images/flutter_logo.png",
-                              scale: 5,
+                              scale: context.watch<UIProviders>().iconScale,
                             ),
-                            SizedBox(width: 30),
+                            SizedBox(width: context.watch<UIProviders>().space),
                             Text(
                               "Flutter : ",
                               style: TextStyle(
-                                fontSize: 20.0,
+                                fontSize: context.watch<UIProviders>().subtext - 1,
                                 color: Colors.white,
                               ),
                             ),
                           ],
                         ),
                         SizedBox(
-                          width: 350,
+                          width: context.watch<UIProviders>().progressWidth,
                           child: progressBar(
                               [
                                 Color(0xff00569E),
@@ -96,20 +98,20 @@ class _skillsDesktopState extends State<skillsDesktop> {
                           children: [
                             Image.asset(
                               "assets/images/kotlinLogo.png",
-                              scale: 5,
+                              scale: context.watch<UIProviders>().iconScale,
                             ),
-                            SizedBox(width: 30),
+                            SizedBox(width: context.watch<UIProviders>().space),
                             Text(
                               "Kotlin : ",
                               style: TextStyle(
-                                fontSize: 20.0,
+                                fontSize:  context.watch<UIProviders>().subtext - 1,
                                 color: Colors.white,
                               ),
                             ),
                           ],
                         ),
                         SizedBox(
-                            width: 350,
+                            width: context.watch<UIProviders>().progressWidth,
                             child: progressBar(
                                 [
                                   Color(0xffE44857),
@@ -129,20 +131,20 @@ class _skillsDesktopState extends State<skillsDesktop> {
                           children: [
                             Image.asset(
                               "assets/images/firebaseLogo.png",
-                              scale: 5,
+                              scale: context.watch<UIProviders>().iconScale,
                             ),
-                            SizedBox(width: 30),
+                            SizedBox(width: context.watch<UIProviders>().space),
                             Text(
                               "Firebase : ",
                               style: TextStyle(
-                                fontSize: 20.0,
+                                fontSize:  context.watch<UIProviders>().subtext - 1,
                                 color: Colors.white,
                               ),
                             ),
                           ],
                         ),
                         SizedBox(
-                            width: 350,
+                            width: context.watch<UIProviders>().progressWidth,
                             child: progressBar(
                                 [
                                   Color(0xffF6820C),
@@ -162,27 +164,28 @@ class _skillsDesktopState extends State<skillsDesktop> {
                           children: [
                             Image.asset(
                               "assets/images/androidStudioLogo.png",
-                              scale: 5,
+                              scale: context.watch<UIProviders>().iconScale,
                             ),
-                            SizedBox(width: 30),
+                            SizedBox(width: context.watch<UIProviders>().space),
                             Text(
                               "Android Studio : ",
                               style: TextStyle(
-                                fontSize: 20.0,
+                                fontSize: context.watch<UIProviders>().subtext - 1,
                                 color: Colors.white,
                               ),
                             ),
                           ],
                         ),
                         SizedBox(
-                            width: 350,
+                            width: context.watch<UIProviders>().progressWidth,
                             child: progressBar(
                                 [
                                   Color(0xff699BF7),
                                   Color(0xff36B07D),
                                   Color(0xff36B07D),
                                 ],
-                                0.85
+
+                              0.85
                             )
                         )
                       ],
@@ -195,10 +198,10 @@ class _skillsDesktopState extends State<skillsDesktop> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 "Others",
                 style: TextStyle(
-                  fontSize: 28.0,
+                  fontSize:  context.watch<UIProviders>().screenTitles,
                   color: Color(0xff2EBBCE),
                 ),
               ),
@@ -208,22 +211,22 @@ class _skillsDesktopState extends State<skillsDesktop> {
                 children: [
                   Image.asset(
                     "assets/images/supabaseLogo.png",
-                    scale: 5,
+                    scale: context.watch<UIProviders>().iconScale,
                   ),
-                  SizedBox(width: 30),
+                  SizedBox(width: context.watch<UIProviders>().space),
                   Image.asset(
                     "assets/images/amplifyLogo.png",
-                    scale: 5,
+                    scale: context.watch<UIProviders>().iconScale,
                   ),
-                  SizedBox(width: 30),
+                  SizedBox(width: context.watch<UIProviders>().space),
                   Image.asset(
                     "assets/images/lottieLogo.png",
-                    scale: 5,
+                    scale: context.watch<UIProviders>().iconScale,
                   ),
-                  SizedBox(width: 30),
+                  SizedBox(width: context.watch<UIProviders>().space),
                   Image.asset(
                     "assets/images/figmaLogo.png",
-                    scale: 5,
+                    scale: context.watch<UIProviders>().iconScale,
                   ),
                 ],
               ),
@@ -233,7 +236,16 @@ class _skillsDesktopState extends State<skillsDesktop> {
           SizedBox(
             width: 800,
             child: AnimatedTextKit(
-              animatedTexts: animatedTextList().skillList,
+              animatedTexts: [
+                TypewriterAnimatedText(
+                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text eve",
+                  textStyle: TextStyle(
+                      fontSize: context.watch<UIProviders>().subtext,
+                      color: Colors.white
+                  ),
+                  speed: const Duration(milliseconds: 8),
+                ),
+              ],
               totalRepeatCount: 1,
               pause: const Duration(milliseconds: 1000),
               displayFullTextOnTap: true,

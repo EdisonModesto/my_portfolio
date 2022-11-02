@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/UI Providers.dart';
 
 class progressBar extends StatefulWidget {
   final List<Color> colors;
@@ -28,9 +31,8 @@ class _progressBarState extends State<progressBar> {
       builder: (context, constraints) {
         final availableWidth = constraints.maxWidth;
         final widthToApply = availableWidth * _value;
-
         return Container(
-          height: 10,
+          height: context.watch<UIProviders>().progessHeight,
           width: double.infinity,
           decoration: const BoxDecoration(
             color: Colors.white,

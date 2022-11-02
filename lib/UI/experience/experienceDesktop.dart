@@ -1,8 +1,12 @@
+import 'dart:html';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/UI/experience/expCardDesk.dart';
 import 'package:portfolio/UI/experience/experienceClass.dart';
+import 'package:provider/provider.dart';
 
+import '../../providers/UI Providers.dart';
 import '../projects/projCardDesk.dart';
 
 class experienceDesktop extends StatefulWidget {
@@ -26,28 +30,29 @@ class _experienceDesktopState extends State<experienceDesktop> {
           fit: BoxFit.cover,
         ),
       ),
-      padding: const EdgeInsets.all(100),
+      padding: EdgeInsets.all(context.watch<UIProviders>().screenPadding),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+          Text(
             "Experience",
             style: TextStyle(
-                fontSize: 32.0,
+                fontSize: context.watch<UIProviders>().screenTitles,
                 color: Colors.white,
                 fontWeight: FontWeight.bold
             ),
           ),
           SizedBox(
               width: MediaQuery.of(context).size.width,
-              height: 361,
+              height: context.watch<UIProviders>().expCardheight,
               child: ScrollConfiguration(
                 behavior: ScrollConfiguration.of(context).copyWith(dragDevices: {
                   PointerDeviceKind.mouse,
                   PointerDeviceKind.trackpad,
                   PointerDeviceKind.stylus,
-                  PointerDeviceKind.unknown
+                  PointerDeviceKind.unknown,
+                  PointerDeviceKind.touch
                 },
                     scrollbars: true
                 ),

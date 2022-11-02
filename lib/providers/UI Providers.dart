@@ -10,9 +10,19 @@ class UIProviders with ChangeNotifier{
   double menuTextF = 38;
   double socialConWidth = 400;
   double socialConHeight = 60;
+  double iconScale = 5;
+  double space = 30;
+  double progressWidth = 350;
+  double progessHeight = 10;
+  double skillContainer = 600;
+  double projCardSize = 200;
+  double projTitle = 16;
+  double projSub = 12;
+  double expCardWidth = 281;
+  double expCardheight = 361;
 
 
-  void setFontSize(hTitle, screenTitle, hPhoto, sub, pad, mtUF, scW, scH){
+  void setFontSize(hTitle, screenTitle, hPhoto, sub, pad, mtUF, scW, scH, iS, spc, pW, pH, sC, pCS, pT, pS, ECW, ECH){
     HomeTitle = hTitle;
     screenTitles = screenTitle;
     homePhoto = hPhoto;
@@ -22,6 +32,17 @@ class UIProviders with ChangeNotifier{
     menuTextF = menuTextUF + 2;
     socialConWidth = scW;
     socialConHeight = scH;
+    iconScale = iS;
+    space = spc;
+    progressWidth = pW;
+    progessHeight = pH;
+    skillContainer = sC;
+    projCardSize = pCS;
+    projTitle = pT;
+    projSub = pS;
+    expCardWidth = ECW;
+    expCardheight = ECH;
+
     notifyListeners();
   }
 

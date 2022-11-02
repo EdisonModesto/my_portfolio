@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             if(BoxConstraints.maxWidth >= 1200){
               WidgetsBinding.instance.addPostFrameCallback((_){
-                context.read<UIProviders>().setFontSize(44, 28, 200, 18, 100, 36, 400, 60);
+                context.read<UIProviders>().setFontSize(44, 28, 200, 18, 100, 36, 400, 60, 5, 30, 350, 10, 600, 200, 16, 12, 281, 361);
                 setState(() {
 
                 });
@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             if(BoxConstraints.maxWidth <= 1200){
               WidgetsBinding.instance.addPostFrameCallback((_) {
-                context.read<UIProviders>().setFontSize(36, 25, 175, 16, 70, 26, 325, 55);
+                context.read<UIProviders>().setFontSize(36, 25, 175, 18, 70, 26, 325, 55, 5, 25, 325, 10, 550, 200, 16, 12, 281, 361);
                 setState(() {
 
                 });
@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             if(BoxConstraints.maxWidth <= 900){
               WidgetsBinding.instance.addPostFrameCallback((_) {
-                context.read<UIProviders>().setFontSize(30, 23, 150, 15, 60, 24, 275, 50);
+                context.read<UIProviders>().setFontSize(30, 23, 150, 18, 60, 24, 275, 50, 6, 20, 275, 8, 500, 200, 14, 10, 251, 331);
                 setState(() {
                   isCompact = false;
                 });
@@ -102,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
             }
             if (BoxConstraints.maxWidth <= 768) {
               WidgetsBinding.instance.addPostFrameCallback((_) {
-                context.read<UIProviders>().setFontSize(34, 23, 150, 12, 60, 26, 350, 60);
+                context.read<UIProviders>().setFontSize(34, 23, 150, 16, 60, 26, 350, 60, 7, 15, 225, 8, 450, 175, 12, 8, 221, 301);
                 setState(() {
                   isCompact = true;
                 });
@@ -110,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
             }
             if (BoxConstraints.maxWidth <= 520) {
               WidgetsBinding.instance.addPostFrameCallback((_) {
-                context.read<UIProviders>().setFontSize(26, 16, 125, 10, 20, 36, 275, 50);
+                context.read<UIProviders>().setFontSize(26, 16, 125, 12, 20, 36, 275, 50, 8, 10, 175, 7, 400, 150, 12, 8, 221, 301);
                 setState(() {
 
                 });
@@ -119,14 +119,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
             if (BoxConstraints.maxWidth <= 350) {
               WidgetsBinding.instance.addPostFrameCallback((_) {
-                context.read<UIProviders>().setFontSize(24, 16, 125, 8, 20, 36, 250, 50);
+                context.read<UIProviders>().setFontSize(24, 16, 125, 12, 20, 36, 250, 50, 10, 5, 150, 6, 500, 150, 12, 8, 221, 301);
                 setState(() {
 
                 });
               });
             }
             
-            return  Stack(
+            return Stack(
               children: [
                 PageView(
                     scrollDirection: Axis.vertical,

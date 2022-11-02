@@ -26,7 +26,7 @@ class _homeUIState extends State<homeUI> {
           fit: BoxFit.cover,
         ),
       ),
-      padding: EdgeInsets.only(left: context.read<UIProviders>().screenPadding, right: context.read<UIProviders>().screenPadding),
+      padding: EdgeInsets.only(left: context.watch<UIProviders>().screenPadding, right: context.watch<UIProviders>().screenPadding),
       child: Column(
         children: [
           SizedBox(
@@ -58,7 +58,7 @@ class _homeUIState extends State<homeUI> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: context.read<UIProviders>().homePhoto,
+                      width: context.watch<UIProviders>().homePhoto,
                       child: ClipRRect(
                         borderRadius: const BorderRadius.all(Radius.circular(200)),
                         child: Image.asset(
@@ -79,7 +79,7 @@ class _homeUIState extends State<homeUI> {
                               style:  TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
-                                  fontSize:  context.read<UIProviders>().HomeTitle
+                                  fontSize:  context.watch<UIProviders>().HomeTitle
                               ),
                               children: <TextSpan>[
                                 TextSpan(
@@ -87,7 +87,7 @@ class _homeUIState extends State<homeUI> {
                                   style: TextStyle(
                                       color: Color(0xff2EBBCE),
                                       fontWeight: FontWeight.bold,
-                                      fontSize: context.read<UIProviders>().HomeTitle
+                                      fontSize: context.watch<UIProviders>().HomeTitle
                                   ),
                                 ),
                               ],
@@ -101,7 +101,7 @@ class _homeUIState extends State<homeUI> {
                               Text(
                                 "I'm a ",
                                 style: TextStyle(
-                                    fontSize:  context.read<UIProviders>().screenTitles,
+                                    fontSize:  context.watch<UIProviders>().screenTitles,
                                     color: Colors.white
                                 ),
                               ),
@@ -110,7 +110,7 @@ class _homeUIState extends State<homeUI> {
                                   TyperAnimatedText(
                                     'Flutter Developer',
                                     textStyle: TextStyle(
-                                        fontSize: context.read<UIProviders>().screenTitles,
+                                        fontSize: context.watch<UIProviders>().screenTitles,
                                         color: Color(0xff2EBBCE)
                                     ),
                                     speed: const Duration(milliseconds: 100),
@@ -118,7 +118,7 @@ class _homeUIState extends State<homeUI> {
                                   TyperAnimatedText(
                                     'Mobile Developer',
                                     textStyle: TextStyle(
-                                        fontSize: context.read<UIProviders>().screenTitles,
+                                        fontSize: context.watch<UIProviders>().screenTitles,
                                         color: Color(0xff2EBBCE)
                                     ),
                                     speed: const Duration(milliseconds: 100),
@@ -126,7 +126,7 @@ class _homeUIState extends State<homeUI> {
                                   TyperAnimatedText(
                                     'Freelancer',
                                     textStyle: TextStyle(
-                                        fontSize: context.read<UIProviders>().screenTitles,
+                                        fontSize: context.watch<UIProviders>().screenTitles,
                                         color: Color(0xff2EBBCE)
                                     ),
                                     speed: const Duration(milliseconds: 100),
@@ -134,7 +134,7 @@ class _homeUIState extends State<homeUI> {
                                   TyperAnimatedText(
                                     'UI Designer',
                                     textStyle: TextStyle(
-                                        fontSize: context.read<UIProviders>().screenTitles,
+                                        fontSize: context.watch<UIProviders>().screenTitles,
                                         color: Color(0xff2EBBCE)
                                     ),
                                     speed: const Duration(milliseconds: 100),
@@ -154,8 +154,8 @@ class _homeUIState extends State<homeUI> {
                       height: 40,
                     ),
                     Container(
-                      width: context.read<UIProviders>().socialConWidth,
-                      height: context.read<UIProviders>().socialConHeight,
+                      width: context.watch<UIProviders>().socialConWidth,
+                      height: context.watch<UIProviders>().socialConHeight,
                       padding: const EdgeInsets.all(10),
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(12)),
