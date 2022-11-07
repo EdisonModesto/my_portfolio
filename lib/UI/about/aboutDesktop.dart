@@ -48,13 +48,13 @@ class _aboutDesktopState extends State<aboutDesktop> {
                     fontWeight: FontWeight.bold
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 SizedBox(
                   width: 800,
                   child: AnimatedTextKit(
                     animatedTexts: [
                       TypewriterAnimatedText(
-                        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s",
+                        "Hi! I'm Edison Modesto, and I'm a Mobile Developer from the Philippines. I'm currently a student at the Pamantasan ng Lungsod ng Maynila taking my Bachelor of Science in Computer Science. I have 2 years worth of experience in mobile development and would be glad to work with you on a project!",
                         textStyle: TextStyle(
                             fontSize: context.watch<UIProviders>().subtext,
                             color: Colors.white
@@ -84,7 +84,7 @@ class _aboutDesktopState extends State<aboutDesktop> {
                       fontWeight: FontWeight.bold
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Container(
                   width: context.watch<UIProviders>().socialConWidth,
                   height: context.watch<UIProviders>().socialConHeight,

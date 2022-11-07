@@ -238,7 +238,7 @@ class _skillsDesktopState extends State<skillsDesktop> {
             child: AnimatedTextKit(
               animatedTexts: [
                 TypewriterAnimatedText(
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text eve",
+                  "I am flexible in using different technologies in Development, Design and Frameworks. You can ensure that your app will use the latest Technologies for better user experience",
                   textStyle: TextStyle(
                       fontSize: context.watch<UIProviders>().subtext,
                       color: Colors.white
