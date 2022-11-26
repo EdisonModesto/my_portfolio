@@ -44,7 +44,7 @@ class _experienceDesktopState extends State<experienceDesktop> {
             ),
           ),
           SizedBox(
-              width: MediaQuery.of(context).size.width,
+              width: MediaQuery.of(context).size.width * context.watch<UIProviders>().expMultiplier,
               height: context.watch<UIProviders>().expCardheight,
               child: ScrollConfiguration(
                 behavior: ScrollConfiguration.of(context).copyWith(dragDevices: {
@@ -63,8 +63,8 @@ class _experienceDesktopState extends State<experienceDesktop> {
                   itemBuilder: (context, index){
                     return expCardDesk(title: experience.title[index], description: experience.description[index],);
                   }, separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox(
-                    width: 100,
+                  return const SizedBox(
+                    width: 25,
                   );
                 },
                 ),

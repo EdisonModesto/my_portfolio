@@ -44,16 +44,16 @@ class expCardDesk extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: context.watch<UIProviders>().projTitle,
                           color: Colors.white
                       ),
                     ),
                     Text(
                       description,
-                      style: const TextStyle(
-                          fontSize: 14,
+                      style: TextStyle(
+                          fontSize:  context.watch<UIProviders>().projSub,
                           color: Color(0xffb0b0b0)
                       ),
                     )

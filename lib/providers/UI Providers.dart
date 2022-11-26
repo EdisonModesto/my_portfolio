@@ -18,11 +18,12 @@ class UIProviders with ChangeNotifier{
   double projCardSize = 200;
   double projTitle = 16;
   double projSub = 12;
-  double expCardWidth = 281;
-  double expCardheight = 361;
+  double expCardWidth = 181;
+  double expCardheight = 261;
+  double expMultiplier = 1;
 
 
-  void setFontSize(hTitle, screenTitle, hPhoto, sub, pad, mtUF, scW, scH, iS, spc, pW, pH, sC, pCS, pT, pS, ECW, ECH){
+  void setFontSize(hTitle, screenTitle, hPhoto, sub, pad, mtUF, scW, scH, iS, spc, pW, pH, sC, pCS, pT, pS, ECW, ECH, EW){
     HomeTitle = hTitle;
     screenTitles = screenTitle;
     homePhoto = hPhoto;
@@ -42,7 +43,7 @@ class UIProviders with ChangeNotifier{
     projSub = pS;
     expCardWidth = ECW;
     expCardheight = ECH;
-
+    expMultiplier = EW;
     notifyListeners();
   }
 
