@@ -25,13 +25,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Portfolio | Edison Modesto',
       theme: ThemeData(
         // is not restarted.
         primarySwatch: Colors.blue,
         fontFamily: "Poppins",
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Portfolio | Edison Modesto'),
     );
   }
 }
@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: SafeArea(
         child: LayoutBuilder(
-          builder: (BuildContext , BoxConstraints ) {
+          builder: (BuildContext, BoxConstraints ) {
 
             if(BoxConstraints.maxWidth >= 1200){
               WidgetsBinding.instance.addPostFrameCallback((_){

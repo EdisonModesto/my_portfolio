@@ -70,7 +70,7 @@ class _projectsDesktopState extends State<projectsDesktop> {
                     scrollDirection: Axis.horizontal,
                     itemCount: personal.title.length,
                     itemBuilder: (context, index){
-                      return projCardDesk(title: personal.title[index], description: personal.description[index],);
+                      return projCardDesk(title: personal.title[index], description: personal.description[index], logo: personal.logo[index], tools: personal.tools[index],);
                     }, separatorBuilder: (BuildContext context, int index) {
                       return SizedBox(
                         width: 20,
@@ -110,7 +110,7 @@ class _projectsDesktopState extends State<projectsDesktop> {
                       scrollDirection: Axis.horizontal,
                       itemCount: client.title.length,
                       itemBuilder: (context, index){
-                        return projCardDesk(title: client.title[index], description: client.description[index],);
+                        return projCardDesk(title: client.title[index], description: client.description[index], logo: client.logo[index], tools: client.tools[index],);
                       }, separatorBuilder: (BuildContext context, int index) {
                       return SizedBox(
                         width: 20,

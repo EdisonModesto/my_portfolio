@@ -61,7 +61,7 @@ class _experienceDesktopState extends State<experienceDesktop> {
                   scrollDirection: Axis.horizontal,
                   itemCount: experience.title.length,
                   itemBuilder: (context, index){
-                    return expCardDesk(title: experience.title[index], description: experience.description[index],);
+                    return expCardDesk(title: experience.title[index], description: experience.description[index], logo: experience.logo[index],);
                   }, separatorBuilder: (BuildContext context, int index) {
                   return const SizedBox(
                     width: 25,
