@@ -24,6 +24,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    precacheImage(AssetImage("assets/images/homeBg.png"), context);
+    precacheImage(AssetImage("assets/images/wallBg.png"), context);
+    precacheImage(AssetImage("assets/images/stairBg.png"), context);
     return MaterialApp(
       title: 'Portfolio | Edison Modesto',
       theme: ThemeData(

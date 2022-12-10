@@ -41,6 +41,7 @@ dependencies:
   provider: ^6.0.4
   responsive_framework: ^0.2.0
   google_fonts: ^3.0.1
+  url_launcher: ^6.1.7
 
 
 dev_dependencies:
@@ -87,6 +88,7 @@ flutter:
     - family: Poppins
       fonts:
         - asset: assets/fonts/Poppins-Regular.ttf
+
         - asset: assets/fonts/Poppins-Bold.ttf
         - weight: 700
 

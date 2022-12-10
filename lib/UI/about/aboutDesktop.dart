@@ -12,7 +12,7 @@ class aboutDesktop extends StatefulWidget {
   State<aboutDesktop> createState() => _aboutDesktopState();
 }
 
-class _aboutDesktopState extends State<aboutDesktop> {
+class _aboutDesktopState extends State<aboutDesktop> with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -50,7 +50,7 @@ class _aboutDesktopState extends State<aboutDesktop> {
                 ),
                 const SizedBox(height: 20),
                 SizedBox(
-                  width: 800,
+                  width: 650,
                   child: AnimatedTextKit(
                     animatedTexts: [
                       TypewriterAnimatedText(
@@ -96,26 +96,10 @@ class _aboutDesktopState extends State<aboutDesktop> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      InkWell(
-                        onTap: (){},
-                        child: Image.asset("assets/images/githubLogo.png"),
-                      ),
-                      InkWell(
-                        onTap: (){},
-                        child: Image.asset("assets/images/linkedLogo.png"),
-                      ),
-                      InkWell(
-                        onTap: (){},
-                        child: Image.asset("assets/images/upworkLogo.png"),
-                      ),
-                      InkWell(
-                        onTap: (){},
-                        child: Image.asset("assets/images/fiverLogo.png"),
-                      ),
-                      InkWell(
-                        onTap: (){},
-                        child: Image.asset("assets/images/fbLogo.png"),
-                      )
+                      Image.asset("assets/images/code.png"),
+                      Image.asset("assets/images/ux.png"),
+                      Image.asset("assets/images/freelance.png"),
+                      Image.asset("assets/images/blockchain.png"),
                     ],
                   ),
                 )
@@ -127,4 +111,7 @@ class _aboutDesktopState extends State<aboutDesktop> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

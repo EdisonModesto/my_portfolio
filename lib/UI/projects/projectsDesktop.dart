@@ -13,7 +13,7 @@ class projectsDesktop extends StatefulWidget {
   State<projectsDesktop> createState() => _projectsDesktopState();
 }
 
-class _projectsDesktopState extends State<projectsDesktop> {
+class _projectsDesktopState extends State<projectsDesktop> with AutomaticKeepAliveClientMixin {
 
   var personal = personalClass();
   var client = clientClass();
@@ -24,7 +24,7 @@ class _projectsDesktopState extends State<projectsDesktop> {
       decoration: const BoxDecoration(
         color: Color(0xff313131),
         image: DecorationImage(
-          image: AssetImage("assets/images/stairBg.png"),
+          image: AssetImage("assets/images/wallBg.png"),
           fit: BoxFit.cover,
         ),
       ),
@@ -125,4 +125,7 @@ class _projectsDesktopState extends State<projectsDesktop> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

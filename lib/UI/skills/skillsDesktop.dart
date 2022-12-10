@@ -13,7 +13,7 @@ class skillsDesktop extends StatefulWidget {
   State<skillsDesktop> createState() => _skillsDesktopState();
 }
 
-class _skillsDesktopState extends State<skillsDesktop> {
+class _skillsDesktopState extends State<skillsDesktop> with AutomaticKeepAliveClientMixin{
 
   @override
   void initState() {
@@ -257,4 +257,7 @@ class _skillsDesktopState extends State<skillsDesktop> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/UI/animatedTextList.dart';
 import 'package:portfolio/providers/UI%20Providers.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class homeUI extends StatefulWidget {
   const homeUI({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class homeUI extends StatefulWidget {
   State<homeUI> createState() => _homeUIState();
 }
 
-class _homeUIState extends State<homeUI> {
+class _homeUIState extends State<homeUI> with AutomaticKeepAliveClientMixin {
 
   var sizeGroup = AutoSizeGroup();
 
@@ -49,7 +50,7 @@ class _homeUIState extends State<homeUI> {
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.9,
+            height: MediaQuery.of(context).size.height * 0.85,
             width: MediaQuery.of(context).size.width,
             child: Center(
               child: SizedBox(
@@ -165,25 +166,45 @@ class _homeUIState extends State<homeUI> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           InkWell(
-                            onTap: (){},
+                            onTap: (){
+                              launchUrl(Uri.parse("https://github.com/EdisonModesto"));
+                            },
                             child: Image.asset("assets/images/githubLogo.png"),
                           ),
                           InkWell(
-                            onTap: (){},
+                            onTap: (){
+                              launchUrl(Uri.parse("https://www.linkedin.com/in/edison-modesto-a65440219/"));
+                            },
                             child: Image.asset("assets/images/linkedLogo.png"),
                           ),
                           InkWell(
-                            onTap: (){},
+                            onTap: (){
+                              launchUrl(Uri.parse("https://www.upwork.com/freelancers/~013a5847212e7b3d32"));
+
+                            },
                             child: Image.asset("assets/images/upworkLogo.png"),
                           ),
                           InkWell(
-                            onTap: (){},
-                            child: Image.asset("assets/images/fiverLogo.png"),
+                            onTap: (){
+                              launchUrl(Uri.parse("https://www.facebook.com/ed.modestoo"));
+
+                            },
+                            child: Image.asset("assets/images/fbLogo.png"),
                           ),
                           InkWell(
-                            onTap: (){},
-                            child: Image.asset("assets/images/fbLogo.png"),
-                          )
+                            onTap: (){
+                              final Uri emailLaunchUri = Uri(
+                                scheme: 'mailto',
+                                path: 'edisonmodesto@protonmail.com',
+                                query: encodeQueryParameters(<String, String>{
+                                  'subject': "Let's connect!",
+                                }),
+                              );
+
+                              launchUrl(emailLaunchUri);
+                            },
+                            child: Image.asset("assets/images/email.png"),
+                          ),
                         ],
                       ),
                     )
@@ -191,10 +212,18 @@ class _homeUIState extends State<homeUI> {
                 ),
               ),
             ),
-          )
-
+          ),
+          Text("Scroll down to see more", style: TextStyle(color: Colors.white),)
         ],
       ),
     );
   }
+  String? encodeQueryParameters(Map<String, String> params) {
+    return params.entries
+        .map((MapEntry<String, String> e) =>
+    '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .join('&');
+  }
+  @override
+  bool get wantKeepAlive => true;
 }

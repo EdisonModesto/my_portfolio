@@ -9,14 +9,14 @@ import 'package:provider/provider.dart';
 import '../../providers/UI Providers.dart';
 import '../projects/projCardDesk.dart';
 
-class experienceDesktop extends StatefulWidget {
+class experienceDesktop extends StatefulWidget  {
   const experienceDesktop({Key? key}) : super(key: key);
 
   @override
   State<experienceDesktop> createState() => _experienceDesktopState();
 }
 
-class _experienceDesktopState extends State<experienceDesktop> {
+class _experienceDesktopState extends State<experienceDesktop> with AutomaticKeepAliveClientMixin {
 
   var experience = experienceClass();
 
@@ -74,4 +74,7 @@ class _experienceDesktopState extends State<experienceDesktop> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
